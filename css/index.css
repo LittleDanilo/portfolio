@@ -1,19 +1,46 @@
+* {
+    scrollbar-width: auto;
+    scrollbar-color: var(--scroll) var(--scroll-bar);
+}
+
 body {
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+html::-webkit-scrollbar {
+    width: 15px;               /* width of the entire scrollbar */
+    height: 10px;
+}
+  
+html::-webkit-scrollbar-track {
+    background: #222222;        /* color of the tracking area */
+}
+  
+html::-webkit-scrollbar-thumb {
+    background-color: #9b2a2a;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+}
+
 .night {
-    --principal-color: #b43333;
+    --principal-color: #9b2a2a;
     --secundary-color: #29272a;
+    --other-color: #b93f3f;
     --font-color: white;
+    --scroll-bar: #29272a;
+    --scroll: #9b2a2a;
+    --svg-fill: white;
 }
 
 .day {
-    --principal-color: #51e0b0;
-    --secundary-color: #d1d1d1;
+    --principal-color: #51e0b0d5;
+    --secundary-color: #e0e0e0;
+    --other-color: #47cca0d5;
     --font-color: #222222;
+    --scroll-bar: white;
+    --scroll: #9b2a2a;
+    --svg-fill: #29272a;
 }
 
 section.intro {
@@ -48,6 +75,7 @@ section.intro {
     height: 500px;
     justify-content: center;
     left: -20%;
+    text-align: left;
 }
 
 .intro__title {
@@ -69,7 +97,21 @@ section.intro {
     position: absolute;
     align-items: center;
     justify-content: center;
-    width: 80%;
+    width: 85%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.Hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-color);
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
     height: 100%;
     padding: 0;
     margin: 0;
@@ -79,6 +121,53 @@ section.intro {
     height: 100%;
 }
 
+#bulb:hover {
+    cursor: pointer;
+}
+
 .beam:hover {
     cursor: pointer;
+}
+
+.skills {
+    background-color: var(--other-color);
+    margin: 0;
+    padding: 70px 40px 70px 40px;
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+}
+
+h2 {
+    font-size: 60pt;
+    color: var(--font-color);
+    padding: 0;
+    margin: 0;
+}
+
+.skills__img-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+    height: 500px;
+}
+
+.skills__img {
+    width: 200px;
+    height: 200px;
+    margin: 20px 40px 20px 40px
+}
+
+.skills__img svg {
+    fill: var(--svg-fill);
+}
+
+.skills__img-text {
+    font-size: 30px;
+    text-align: center;
+    color: var(--font-color)
 }
